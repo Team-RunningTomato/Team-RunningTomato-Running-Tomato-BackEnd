@@ -26,10 +26,10 @@ public class User {
     private String nickname;
 
     @Column(length = 10, nullable = false)
-    private Integer height;
+    private Float height;
 
     @Column(length = 10, nullable = false)
-    private Integer weight;
+    private Float weight;
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String area;
