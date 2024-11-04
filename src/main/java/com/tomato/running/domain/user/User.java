@@ -16,21 +16,26 @@ import java.util.UUID;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
+
+    private String gender;
+
+    private String birthday;
+
+    private String age;
+
+    private String mobile;
+
+    private String birthyear;
 
     @Column(length = 10, nullable = false)
     private String name;
 
-    @Column(length = 20, nullable = false)
-    private String nickname;
+    @Column
+    private String email;
 
-    @Column(length = 10, nullable = false)
-    private Float height;
-
-    @Column(length = 10, nullable = false)
-    private Float weight;
-
-    @Column(columnDefinition = "TEXT", nullable = false)
-    private String area;
+    @Column(name = "role")
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }
