@@ -16,9 +16,8 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class Meeting {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     @Column(length = 20, nullable = false)
@@ -39,4 +38,5 @@ public class Meeting {
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
 }
