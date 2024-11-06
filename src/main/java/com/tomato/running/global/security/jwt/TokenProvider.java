@@ -20,6 +20,7 @@ import java.util.Date;
 import java.util.UUID;
 
 @Component
+@Slf4j
 public class TokenProvider {
 
     private final UserDetailsService userDetailsService;
