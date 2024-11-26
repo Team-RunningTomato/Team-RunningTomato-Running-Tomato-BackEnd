@@ -1,6 +1,7 @@
 package com.tomato.running.domain.auth.service;
 
 import com.tomato.running.domain.auth.presentation.data.res.TokenDto;
+import com.tomato.running.domain.user.Role;
 import com.tomato.running.domain.user.User;
 import com.tomato.running.domain.user.repository.UserRepository;
 import com.tomato.running.global.annotation.TransactionService;
@@ -47,6 +48,7 @@ public class LoginService {
                 .age(naverInfoResponse.getAge())
                 .mobile(naverInfoResponse.getMobile())
                 .birthyear(naverInfoResponse.getBirthyear())
+                .role(Role.ROLE_USER)
                 .build();
 
         return userRepository.save(user).getId();
