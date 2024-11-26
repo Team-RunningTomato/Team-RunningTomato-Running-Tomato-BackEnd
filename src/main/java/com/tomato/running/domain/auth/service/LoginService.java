@@ -1,6 +1,7 @@
 package com.tomato.running.domain.auth.service;
 
 import com.tomato.running.domain.auth.presentation.data.res.TokenDto;
+import com.tomato.running.domain.auth.repository.RefreshTokenRepository;
 import com.tomato.running.domain.user.Role;
 import com.tomato.running.domain.user.User;
 import com.tomato.running.domain.user.repository.UserRepository;
@@ -21,6 +22,7 @@ public class LoginService {
     private final UserRepository userRepository;
     private final TokenProvider tokenProvider;
     private final RequestOAuthInfoService requestOAuthInfoService;
+    private final RefreshTokenRepository refreshTokenRepository;
 
     public TokenDto login(NaverLoginParams params) {
         NaverInfoResponse naverInfoResponse = requestOAuthInfoService.request(params);
@@ -59,6 +61,8 @@ public class LoginService {
                 .id(id)
                 .token(token)
                 .build();
+
+        refreshTokenRepository.save(refreshToken);
     }
 
 
