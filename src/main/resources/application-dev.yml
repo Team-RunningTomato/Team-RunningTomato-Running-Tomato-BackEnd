@@ -1,0 +1,40 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/running?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+    username: root
+    password: 1029384756
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 10MB
+
+
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.MySQLDialect
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+jwt:
+  secret: hsgJ6F6hOzywA6nvbP8jNL5T6MjKbEq8Mv0G7DZjsyo=
+
+oauth:
+  naver:
+    secret: HAqh3O0LJk
+    client-id: Xmi263zQbdDX5K4g3CDx
+    url:
+      auth: https://nid.naver.com
+      api: https://openapi.naver.com
