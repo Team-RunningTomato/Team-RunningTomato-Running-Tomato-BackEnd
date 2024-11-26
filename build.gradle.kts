@@ -35,6 +35,7 @@ dependencies {
 	runtimeOnly("com.mysql:mysql-connector-j")
 	runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
 	implementation("org.mariadb.jdbc:mariadb-java-client")
+	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 
 
 	implementation("io.jsonwebtoken:jjwt-api:0.11.5")
