@@ -9,7 +9,7 @@ import org.springframework.data.redis.core.index.Indexed;
 
 import java.util.UUID;
 
-@RedisHash(value = "expo_refreshToken", timeToLive = TokenProvider.REFRESH_TOKEN_EXPIRE_TIME)
+@RedisHash(value = "running_refreshToken", timeToLive = TokenProvider.REFRESH_TOKEN_EXPIRE_TIME)
 @Builder
 @Getter
 public class RefreshToken {
