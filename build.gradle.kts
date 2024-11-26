@@ -32,8 +32,10 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	runtimeOnly("com.mysql:mysql-connector-j")
 	runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
 	implementation("org.mariadb.jdbc:mariadb-java-client")
+	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 
 
 	implementation("io.jsonwebtoken:jjwt-api:0.11.5")
