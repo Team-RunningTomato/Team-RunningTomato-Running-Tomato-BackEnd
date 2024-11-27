@@ -36,6 +36,7 @@ dependencies {
 	runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
 	implementation("org.mariadb.jdbc:mariadb-java-client")
 	implementation("org.springframework.boot:spring-boot-starter-data-redis")
+	implementation("org.springframework.boot:spring-boot-starter-validation")
 
 
 	implementation("io.jsonwebtoken:jjwt-api:0.11.5")
