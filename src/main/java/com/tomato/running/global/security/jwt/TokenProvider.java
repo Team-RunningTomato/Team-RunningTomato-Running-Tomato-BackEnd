@@ -1,6 +1,7 @@
 package com.tomato.running.global.security.jwt;
 
 import com.tomato.running.domain.auth.presentation.data.res.TokenDto;
+import com.tomato.running.global.auth.AuthDetailsService;
 import com.tomato.running.global.security.exception.TokenExpirationException;
 import com.tomato.running.global.security.exception.TokenNotValidException;
 import io.jsonwebtoken.*;
@@ -11,7 +12,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
@@ -21,7 +21,7 @@ import java.util.UUID;
 @Component
 public class TokenProvider {
 
-    private final UserDetailsService userDetailsService;
+    private final AuthDetailsService authDetailsService;
     private static final String AUTHORITIES_KEY = "auth";
     private static final String BEARER_TYPE = "Bearer ";
     private static final long ACCESS_TOKEN_EXPIRE_TIME = 1000 * 60 * 30; // 30분
@@ -30,10 +30,10 @@ public class TokenProvider {
     private final Key key;
 
 
-    public TokenProvider(@Value("${jwt.secret}") String secret, UserDetailsService userDetailsService) {
+    public TokenProvider(@Value("${jwt.secret}") String secret, AuthDetailsService authDetailsService) {
         byte[] keyBytes = Decoders.BASE64.decode(secret);
         this.key = Keys.hmacShaKeyFor(keyBytes);
-        this.userDetailsService = userDetailsService;
+        this.authDetailsService = authDetailsService;
     }
 
     public TokenDto generateTokenDto(UUID userid){
@@ -84,7 +84,7 @@ public class TokenProvider {
         UUID userid = UUID.fromString(claims.getSubject());
 
         // UserDetails 객체를 만들어서 Authentication 리턴
-        UserDetails principal = userDetailsService.loadUserByUsername(userid.toString());
+        UserDetails principal = authDetailsService.loadUserByUsername(userid.toString());
         return new UsernamePasswordAuthenticationToken(principal, "", principal.getAuthorities());
 
     }
