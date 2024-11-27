@@ -49,9 +49,14 @@ public class SecurityConfig {
                 .authorizeHttpRequests((authorizeRequests) ->
                         authorizeRequests
                                 .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
+
+                                // auth
                                 .requestMatchers(HttpMethod.POST, "/auth/join").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/auth/naver").permitAll()
                                 .requestMatchers(HttpMethod.PATCH, "/auth").permitAll()
+
+                                // user
+                                .requestMatchers(HttpMethod.PATCH, "/user").authenticated()
 
                                 .anyRequest().authenticated()
                 )
