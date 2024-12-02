@@ -58,7 +58,7 @@ public class LoginService {
 
     private void saveRefreshToken(String token, UUID id) {
         RefreshToken refreshToken = RefreshToken.builder()
-                .id(id)
+                .userId(id)
                 .token(token)
                 .build();
 

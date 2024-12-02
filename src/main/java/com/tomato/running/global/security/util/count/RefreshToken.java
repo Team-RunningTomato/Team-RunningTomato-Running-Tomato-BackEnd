@@ -15,7 +15,7 @@ import java.util.UUID;
 public class RefreshToken {
 
     @Id
-    private UUID id;
+    private UUID userId;
 
     @Indexed
     private String token;
