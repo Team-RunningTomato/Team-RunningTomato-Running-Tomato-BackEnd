@@ -54,6 +54,7 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.POST, "/auth/join").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/auth/naver").permitAll()
                                 .requestMatchers(HttpMethod.PATCH, "/auth").permitAll()
+                                .requestMatchers(HttpMethod.DELETE, "/auth").authenticated()
 
                                 // user
                                 .requestMatchers(HttpMethod.PATCH, "/user").authenticated()
