@@ -6,16 +6,11 @@ import com.tomato.running.domain.auth.service.LogoutService;
 import com.tomato.running.domain.auth.service.ReissueTokenService;
 import com.tomato.running.global.oauth.dto.NaverLoginParams;
 import com.tomato.running.global.security.util.count.CookieUtil;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-
-@Slf4j
 
 @RestController
 @RequiredArgsConstructor
@@ -38,11 +33,10 @@ public class AuthController {
 
             return ResponseEntity.ok(tokenDto);
         } catch (Exception e) {
-
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
-        }
+                e.printStackTrace();
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+            }
     }
-
 
     @PatchMapping
     public ResponseEntity<TokenDto> reissueToken(@RequestHeader String refreshToken) {
