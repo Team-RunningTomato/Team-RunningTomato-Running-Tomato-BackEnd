@@ -34,7 +34,6 @@ dependencies {
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	runtimeOnly("com.mysql:mysql-connector-j")
 	runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
-	implementation("jakarta.servlet:jakarta.servlet-api:5.0.0")
 	implementation("org.mariadb.jdbc:mariadb-java-client")
 	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
