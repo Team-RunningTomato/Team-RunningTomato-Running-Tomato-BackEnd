@@ -23,6 +23,9 @@ public class User {
     @Column(nullable = false, columnDefinition = "VARCHAR(5)")
     private String gender;
 
+    @Column(nullable = false, columnDefinition = "VARCHAR(100)")
+    private String email;
+
     @Column(nullable = false, columnDefinition = "VARCHAR(10)")
     private String age;
 
