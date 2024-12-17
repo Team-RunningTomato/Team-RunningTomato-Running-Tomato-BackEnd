@@ -23,11 +23,11 @@ public class Month {
     @Column(nullable = false)
     private Integer distance;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
-    private String startedLocation;
+    @Embedded
+    private StartLocation startLocation;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
-    private String endedLocation;
+    @Embedded
+    private EndLocation endLocation;
 
     @Column(columnDefinition = "TEXT", nullable = false)
     private String runningTime;
