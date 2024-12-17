@@ -20,24 +20,25 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
+    @Column(nullable = false, columnDefinition = "VARCHAR(5)")
     private String gender;
 
-    private String birthday;
-
-    private String age;
-
-    private String mobile;
-
-    private String birthyear;
-
-    @Column(length = 10, nullable = false)
-    private String name;
-
-    @Column
+    @Column(nullable = false, columnDefinition = "VARCHAR(100)")
     private String email;
 
+    @Column(nullable = false, columnDefinition = "VARCHAR(10)")
+    private String age;
+
+    @Column(nullable = false, columnDefinition = "VARCHAR(20)")
+    private String mobile;
+
+    @Column(nullable = false, columnDefinition = "VARCHAR(10)")
+    private String name;
+
+    @Column(columnDefinition = "VARCHAR(10)")
     private String weight;
 
+    @Column(columnDefinition = "VARCHAR(10)")
     private String height;
 
     @Column(name = "role")

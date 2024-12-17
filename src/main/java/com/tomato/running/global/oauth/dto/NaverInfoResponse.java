@@ -18,10 +18,8 @@ public class NaverInfoResponse {
         private String email;
         private String name;
         private String gender;
-        private String birthday;
         private String age;
         private String mobile;
-        private String birthyear;
     }
 
     public String getEmail() {
@@ -34,9 +32,6 @@ public class NaverInfoResponse {
         return response.gender;
     }
 
-    public String getBirthday() {
-        return response.birthday;
-    }
     public String getAge() {
         return response.age;
     }
@@ -45,7 +40,4 @@ public class NaverInfoResponse {
         return response.mobile;
     }
 
-    public String getBirthyear(){
-        return response.birthyear;
-    }
 }
