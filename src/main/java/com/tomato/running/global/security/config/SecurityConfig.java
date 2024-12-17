@@ -60,6 +60,10 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.PATCH, "/user").authenticated()
                                 .requestMatchers(HttpMethod.GET, "/user").authenticated()
 
+                                //meeting
+                                .requestMatchers(HttpMethod.POST, "/meeting").authenticated()
+
+
                                 .anyRequest().authenticated()
                 )
 

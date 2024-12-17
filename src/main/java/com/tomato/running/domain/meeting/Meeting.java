@@ -1,5 +1,8 @@
 package com.tomato.running.domain.meeting;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.tomato.running.domain.run.EndLocation;
+import com.tomato.running.domain.run.StartLocation;
 import com.tomato.running.domain.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -26,14 +29,15 @@ public class Meeting {
     @Column(nullable = false)
     private Integer distance;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "Asia/Seoul")
     @Column(nullable = false)
     private LocalDateTime startAt;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
-    private String startedLocation;
+    @Embedded
+    private StartLocation startLocation;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
-    private String endedLocation;
+    @Embedded
+    private EndLocation endLocation;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
