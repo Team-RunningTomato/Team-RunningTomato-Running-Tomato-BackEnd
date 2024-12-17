@@ -7,12 +7,12 @@ import com.tomato.running.domain.run.EndLocation;
 import com.tomato.running.domain.run.StartLocation;
 import com.tomato.running.domain.user.User;
 import com.tomato.running.domain.user.util.UserUtil;
+import com.tomato.running.global.annotation.TransactionService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@Service
-@Transactional
+@TransactionService
 @RequiredArgsConstructor
 public class CreateMeetingService {
 
