@@ -12,4 +12,14 @@ public class GetMyInformationResponseDto {
     private String name;
     private String weight;
     private String height;
+    private runningUserDto runningUser;
+
+    @Builder
+    @Getter
+    public static class runningUserDto {
+        private Long totalDistance;
+        private Long bestDistance;
+        private Long worstDistance;
+        private Integer levelPercentage;
+    }
 }
