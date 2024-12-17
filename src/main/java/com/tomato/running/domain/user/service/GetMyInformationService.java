@@ -2,7 +2,6 @@ package com.tomato.running.domain.user.service;
 
 import com.tomato.running.domain.user.User;
 import com.tomato.running.domain.user.controller.data.res.GetMyInformationResponseDto;
-import com.tomato.running.domain.user.repository.UserRepository;
 import com.tomato.running.domain.user.util.UserUtil;
 import com.tomato.running.global.annotation.ReadOnlyTransactionService;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class GetMyInformationService {
 
-    private final UserRepository userRepository;
     private final UserUtil userUtil;
 
     public GetMyInformationResponseDto getMyInformation() {
