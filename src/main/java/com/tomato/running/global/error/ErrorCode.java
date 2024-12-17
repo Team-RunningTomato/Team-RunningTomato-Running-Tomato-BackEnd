@@ -16,8 +16,10 @@ public enum ErrorCode {
 
     // USER
     USER_NOT_FOUND(404, "USER_NOT_FOUND"),
-    ALREADY_EXIST_USERNAME(409, "ALREADY_EXIST_USERNAME");
+    ALREADY_EXIST_USERNAME(409, "ALREADY_EXIST_USERNAME"),
 
+    // run
+    RUNNING_USER_NOT_FOUND(404, "RUNNING_USER_NOT_FOUND"),;
     private final int status;
     private final String message;
 }
