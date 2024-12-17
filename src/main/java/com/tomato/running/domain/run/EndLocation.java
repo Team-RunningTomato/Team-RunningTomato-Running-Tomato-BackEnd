@@ -1,4 +1,4 @@
-package com.tomato.running.domain.month;
+package com.tomato.running.domain.run;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
