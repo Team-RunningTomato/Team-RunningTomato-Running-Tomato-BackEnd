@@ -58,6 +58,7 @@ public class SecurityConfig {
 
                                 // user
                                 .requestMatchers(HttpMethod.PATCH, "/user").authenticated()
+                                .requestMatchers(HttpMethod.GET, "/user").authenticated()
 
                                 .anyRequest().authenticated()
                 )
