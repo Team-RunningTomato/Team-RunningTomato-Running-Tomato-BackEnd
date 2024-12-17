@@ -46,10 +46,8 @@ public class LoginService {
                 .email(naverInfoResponse.getEmail())
                 .name(naverInfoResponse.getName())
                 .gender(naverInfoResponse.getGender())
-                .birthday(naverInfoResponse.getBirthday())
                 .age(naverInfoResponse.getAge())
                 .mobile(naverInfoResponse.getMobile())
-                .birthyear(naverInfoResponse.getBirthyear())
                 .role(Role.ROLE_USER)
                 .build();
 
