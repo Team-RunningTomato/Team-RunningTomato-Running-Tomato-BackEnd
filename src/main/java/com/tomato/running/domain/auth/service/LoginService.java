@@ -2,6 +2,8 @@ package com.tomato.running.domain.auth.service;
 
 import com.tomato.running.domain.auth.presentation.data.res.TokenDto;
 import com.tomato.running.domain.auth.repository.RefreshTokenRepository;
+import com.tomato.running.domain.running.RunningUser;
+import com.tomato.running.domain.running.repository.RunningUserRepository;
 import com.tomato.running.domain.user.Role;
 import com.tomato.running.domain.user.User;
 import com.tomato.running.domain.user.repository.UserRepository;
@@ -23,25 +25,25 @@ public class LoginService {
     private final TokenProvider tokenProvider;
     private final RequestOAuthInfoService requestOAuthInfoService;
     private final RefreshTokenRepository refreshTokenRepository;
+    private final RunningUserRepository runningUserRepository;
 
     public TokenDto login(NaverLoginParams params) {
         NaverInfoResponse naverInfoResponse = requestOAuthInfoService.request(params);
-        UUID userId = findOrCreateMember(naverInfoResponse);
+        User user = findOrCreateMember(naverInfoResponse);
 
-        TokenDto tokenDto = tokenProvider.generateTokenDto(userId);
+        TokenDto tokenDto = tokenProvider.generateTokenDto(user.getId());
 
-        saveRefreshToken(tokenDto.getRefreshToken(), userId);
+        saveRefreshToken(tokenDto.getRefreshToken(), user.getId());
 
         return tokenDto;
     }
 
-    private UUID findOrCreateMember(NaverInfoResponse naverInfoResponse) {
+    private User findOrCreateMember(NaverInfoResponse naverInfoResponse) {
         return userRepository.findByEmail(naverInfoResponse.getEmail())
-                .map(User::getId)
                 .orElseGet(() -> newUser(naverInfoResponse));
     }
 
-    private UUID newUser(NaverInfoResponse naverInfoResponse) {
+    private User newUser(NaverInfoResponse naverInfoResponse) {
         User user = User.builder()
                 .email(naverInfoResponse.getEmail())
                 .name(naverInfoResponse.getName())
@@ -51,7 +53,9 @@ public class LoginService {
                 .role(Role.ROLE_USER)
                 .build();
 
-        return userRepository.save(user).getId();
+        saveRunningUser(user);
+
+        return userRepository.save(user);
     }
 
     private void saveRefreshToken(String token, UUID id) {
@@ -63,6 +67,15 @@ public class LoginService {
         refreshTokenRepository.save(refreshToken);
     }
 
+    private void saveRunningUser(User user) {
+        RunningUser runningUser = RunningUser.builder()
+                .totalDistance(0L)
+                .bestDistance(0L)
+                .worstDistance(0L)
+                .levelPercentage(0)
+                .user(user)
+                .build();
 
-
+        runningUserRepository.save(runningUser);
+    }
 }

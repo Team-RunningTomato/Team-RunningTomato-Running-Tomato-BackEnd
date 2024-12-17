@@ -1,4 +1,4 @@
-package com.tomato.running.domain.month;
+package com.tomato.running.domain.run;
 
 import com.tomato.running.domain.user.User;
 import jakarta.persistence.*;
@@ -14,7 +14,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Month {
+public class Run {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
