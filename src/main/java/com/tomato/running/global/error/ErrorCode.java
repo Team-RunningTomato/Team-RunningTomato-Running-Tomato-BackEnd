@@ -22,7 +22,8 @@ public enum ErrorCode {
     RUNNING_USER_NOT_FOUND(404, "RUNNING_USER_NOT_FOUND"),
 
     // meeting
-    MEETING_NOT_FOUND(404, "MEETING_NOT_FOUND"),;
+    MEETING_NOT_FOUND(404, "MEETING_NOT_FOUND"),
+    AUTHOR_NOT_VALID(401, "AUTHOR_NOT_VALID"),;
     private final int status;
     private final String message;
 }
