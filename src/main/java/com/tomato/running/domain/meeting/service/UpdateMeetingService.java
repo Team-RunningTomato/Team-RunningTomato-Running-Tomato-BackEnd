@@ -38,7 +38,5 @@ public class UpdateMeetingService {
                 new StartLocation(dto.getStartLongitude(), dto.getStartLatitude()),
                 new EndLocation(dto.getEndLongitude(), dto.getEndLatitude())
         );
-
-        meetingRepository.save(meeting);
     }
 }
