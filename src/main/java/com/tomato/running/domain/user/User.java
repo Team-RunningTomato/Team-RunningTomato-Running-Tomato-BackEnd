@@ -46,6 +46,9 @@ public class User {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @Column(nullable = false)
+    private Integer level;
+
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "runningUser_id", nullable = false)
     private RunningUser runningUser;
