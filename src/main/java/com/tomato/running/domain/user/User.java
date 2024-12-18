@@ -1,5 +1,6 @@
 package com.tomato.running.domain.user;
 
+import com.tomato.running.domain.running.RunningUser;
 import com.tomato.running.domain.user.controller.data.req.UpdateWeightAndHeightRequestDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -44,6 +45,10 @@ public class User {
     @Column(name = "role")
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "runningUser_id", nullable = false)
+    private RunningUser runningUser;
 
     public void saveWeightAndHeight(UpdateWeightAndHeightRequestDto dto) {
         this.height = dto.getHeight();
