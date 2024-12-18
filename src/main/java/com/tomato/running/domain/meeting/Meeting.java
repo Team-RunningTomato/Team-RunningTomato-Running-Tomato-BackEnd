@@ -43,4 +43,13 @@ public class Meeting {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    public void updateMeeting(String title, Integer distance, LocalDateTime startAt,
+                              StartLocation startLocation, EndLocation endLocation) {
+        this.title = title;
+        this.distance = distance;
+        this.startAt = startAt;
+        this.startLocation = startLocation;
+        this.endLocation = endLocation;
+    }
+
 }
