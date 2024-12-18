@@ -4,10 +4,7 @@ package com.tomato.running.domain.meeting.controller;
 import com.tomato.running.domain.meeting.controller.data.req.CreateMeetingRequestDto;
 import com.tomato.running.domain.meeting.controller.data.res.GetMeetingInfoResponseDto;
 import com.tomato.running.domain.meeting.controller.data.res.GetMeetingResponseDto;
-import com.tomato.running.domain.meeting.service.CreateMeetingService;
-import com.tomato.running.domain.meeting.service.GetMeetingInfoService;
-import com.tomato.running.domain.meeting.service.GetMeetingListService;
-import com.tomato.running.domain.meeting.service.UpdateMeetingService;
+import com.tomato.running.domain.meeting.service.*;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -26,6 +23,7 @@ public class MeetingController {
     private final GetMeetingListService getMeetingListService;
     private final GetMeetingInfoService getMeetingInfoService;
     private final UpdateMeetingService updateMeetingService;
+    private final DeleteMeetingService deleteMeetingService;
 
     @PostMapping
     public ResponseEntity<Void> creatMeeting(@RequestBody @Valid CreateMeetingRequestDto dto) {
@@ -46,6 +44,12 @@ public class MeetingController {
     @PatchMapping("/{meeting_id}")
     public  ResponseEntity<Void> updateMeeting(@PathVariable("meeting_id") UUID meetingId, @RequestBody @Valid CreateMeetingRequestDto dto){
         updateMeetingService.updateMeeting(dto, meetingId);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    @DeleteMapping("/{meeting_id}")
+    public  ResponseEntity<Void> deleteMeeting(@PathVariable("meeting_id") UUID meetingId){
+        deleteMeetingService.deleteMeeting(meetingId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
