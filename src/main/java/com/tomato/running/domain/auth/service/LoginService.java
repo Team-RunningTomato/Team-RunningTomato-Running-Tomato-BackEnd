@@ -54,6 +54,7 @@ public class LoginService {
                 .mobile(naverInfoResponse.getMobile())
                 .role(Role.ROLE_USER)
                 .runningUser(runningUser)
+                .level(0)
                 .build();
 
         return userRepository.save(user);
