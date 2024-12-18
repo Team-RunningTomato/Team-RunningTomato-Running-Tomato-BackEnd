@@ -7,6 +7,7 @@ import com.tomato.running.domain.meeting.controller.data.res.GetMeetingResponseD
 import com.tomato.running.domain.meeting.service.CreateMeetingService;
 import com.tomato.running.domain.meeting.service.GetMeetingInfoService;
 import com.tomato.running.domain.meeting.service.GetMeetingListService;
+import com.tomato.running.domain.meeting.service.UpdateMeetingService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,7 @@ public class MeetingController {
     private final CreateMeetingService createMeetingService;
     private final GetMeetingListService getMeetingListService;
     private final GetMeetingInfoService getMeetingInfoService;
+    private final UpdateMeetingService updateMeetingService;
 
     @PostMapping
     public ResponseEntity<Void> creatMeeting(@RequestBody @Valid CreateMeetingRequestDto dto) {
@@ -39,5 +41,11 @@ public class MeetingController {
     @GetMapping("/{meeting_id}")
     public ResponseEntity<GetMeetingInfoResponseDto> getMeetingInfo(@PathVariable("meeting_id") UUID meetingId) {
         return ResponseEntity.ok(getMeetingInfoService.getMeetingInfo(meetingId));
+    }
+
+    @PatchMapping("/{meeting_id}")
+    public  ResponseEntity<Void> updateMeeting(@PathVariable("meeting_id") UUID meetingId, @RequestBody @Valid CreateMeetingRequestDto dto){
+        updateMeetingService.updateMeeting(dto, meetingId);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
