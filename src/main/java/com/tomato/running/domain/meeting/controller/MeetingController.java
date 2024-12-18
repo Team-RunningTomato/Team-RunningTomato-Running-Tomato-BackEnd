@@ -44,7 +44,7 @@ public class MeetingController {
     }
 
     @PatchMapping("/{meeting_id}")
-    public  ResponseEntity<Void> updateMeeting(@PathVariable("meeting_id") UUID meetingId, @RequestBody CreateMeetingRequestDto dto){
+    public  ResponseEntity<Void> updateMeeting(@PathVariable("meeting_id") UUID meetingId, @RequestBody @Valid CreateMeetingRequestDto dto){
         updateMeetingService.updateMeeting(dto, meetingId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
