@@ -44,6 +44,8 @@ public class LoginService {
     }
 
     private User newUser(NaverInfoResponse naverInfoResponse) {
+        RunningUser runningUser = saveRunningUser();
+
         User user = User.builder()
                 .email(naverInfoResponse.getEmail())
                 .name(naverInfoResponse.getName())
@@ -51,9 +53,8 @@ public class LoginService {
                 .age(naverInfoResponse.getAge())
                 .mobile(naverInfoResponse.getMobile())
                 .role(Role.ROLE_USER)
+                .runningUser(runningUser)
                 .build();
-
-        saveRunningUser(user);
 
         return userRepository.save(user);
     }
@@ -67,15 +68,16 @@ public class LoginService {
         refreshTokenRepository.save(refreshToken);
     }
 
-    private void saveRunningUser(User user) {
+    private RunningUser saveRunningUser() {
         RunningUser runningUser = RunningUser.builder()
                 .totalDistance(0L)
                 .bestDistance(0L)
                 .worstDistance(0L)
                 .levelPercentage(0)
-                .user(user)
                 .build();
 
         runningUserRepository.save(runningUser);
+
+        return runningUser;
     }
 }
