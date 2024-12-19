@@ -1,6 +1,6 @@
 package com.tomato.running.domain.user.util;
 
-import com.tomato.running.domain.user.User;
+import com.tomato.running.domain.user.entity.User;
 import com.tomato.running.domain.user.exception.UserNotFoundException;
 import com.tomato.running.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

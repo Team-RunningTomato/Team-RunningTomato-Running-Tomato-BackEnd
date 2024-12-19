@@ -1,6 +1,6 @@
 package com.tomato.running.domain.meeting.service;
 
-import com.tomato.running.domain.meeting.Meeting;
+import com.tomato.running.domain.meeting.entity.Meeting;
 import com.tomato.running.domain.meeting.controller.data.res.GetMeetingInfoResponseDto;
 import com.tomato.running.domain.meeting.exception.MeetingNotFoundException;
 import com.tomato.running.domain.meeting.repository.MeetingMemberRepository;

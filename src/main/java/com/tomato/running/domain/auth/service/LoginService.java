@@ -2,10 +2,10 @@ package com.tomato.running.domain.auth.service;
 
 import com.tomato.running.domain.auth.presentation.data.res.TokenDto;
 import com.tomato.running.domain.auth.repository.RefreshTokenRepository;
-import com.tomato.running.domain.running.RunningUser;
+import com.tomato.running.domain.running.entity.RunningUser;
 import com.tomato.running.domain.running.repository.RunningUserRepository;
-import com.tomato.running.domain.user.Role;
-import com.tomato.running.domain.user.User;
+import com.tomato.running.domain.user.entity.Role;
+import com.tomato.running.domain.user.entity.User;
 import com.tomato.running.domain.user.repository.UserRepository;
 import com.tomato.running.global.annotation.TransactionService;
 import com.tomato.running.global.oauth.dto.NaverInfoResponse;

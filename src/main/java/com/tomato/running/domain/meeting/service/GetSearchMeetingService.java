@@ -1,6 +1,6 @@
 package com.tomato.running.domain.meeting.service;
 
-import com.tomato.running.domain.meeting.Meeting;
+import com.tomato.running.domain.meeting.entity.Meeting;
 import com.tomato.running.domain.meeting.controller.data.res.GetMeetingResponseDto;
 import com.tomato.running.domain.meeting.repository.MeetingRepository;
 import com.tomato.running.global.annotation.ReadOnlyTransactionService;

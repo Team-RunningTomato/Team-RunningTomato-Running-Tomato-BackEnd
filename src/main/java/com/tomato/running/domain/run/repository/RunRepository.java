@@ -1,6 +1,6 @@
 package com.tomato.running.domain.run.repository;
 
-import com.tomato.running.domain.run.Run;
+import com.tomato.running.domain.run.entity.Run;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

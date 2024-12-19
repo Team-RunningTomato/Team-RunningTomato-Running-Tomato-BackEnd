@@ -1,6 +1,5 @@
-package com.tomato.running.domain.running;
+package com.tomato.running.domain.running.entity;
 
-import com.tomato.running.domain.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

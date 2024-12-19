@@ -1,6 +1,6 @@
 package com.tomato.running.domain.meeting.controller.data.res;
 
-import com.tomato.running.domain.run.StartLocation;
+import com.tomato.running.domain.run.entity.StartLocation;
 import lombok.Builder;
 import lombok.Getter;
 

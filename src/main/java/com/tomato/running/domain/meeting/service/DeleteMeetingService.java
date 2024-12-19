@@ -1,10 +1,10 @@
 package com.tomato.running.domain.meeting.service;
 
-import com.tomato.running.domain.meeting.Meeting;
+import com.tomato.running.domain.meeting.entity.Meeting;
 import com.tomato.running.domain.meeting.exception.AuthorNotValidException;
 import com.tomato.running.domain.meeting.exception.MeetingNotFoundException;
 import com.tomato.running.domain.meeting.repository.MeetingRepository;
-import com.tomato.running.domain.user.User;
+import com.tomato.running.domain.user.entity.User;
 import com.tomato.running.domain.user.util.UserUtil;
 import com.tomato.running.global.annotation.TransactionService;
 import lombok.RequiredArgsConstructor;

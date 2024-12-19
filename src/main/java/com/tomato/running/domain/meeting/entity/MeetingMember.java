@@ -1,6 +1,6 @@
-package com.tomato.running.domain.meeting;
+package com.tomato.running.domain.meeting.entity;
 
-import com.tomato.running.domain.user.User;
+import com.tomato.running.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,6 +1,6 @@
 package com.tomato.running.domain.user.repository;
 
-import com.tomato.running.domain.user.User;
+import com.tomato.running.domain.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

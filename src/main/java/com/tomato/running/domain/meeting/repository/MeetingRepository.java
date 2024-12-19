@@ -1,8 +1,8 @@
 package com.tomato.running.domain.meeting.repository;
 
 
-import com.tomato.running.domain.meeting.Meeting;
-import com.tomato.running.domain.user.User;
+import com.tomato.running.domain.meeting.entity.Meeting;
+import com.tomato.running.domain.user.entity.User;
 import io.lettuce.core.dynamic.annotation.Param;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

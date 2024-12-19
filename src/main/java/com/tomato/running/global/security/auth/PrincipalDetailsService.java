@@ -1,6 +1,6 @@
 package com.tomato.running.global.security.auth;
 
-import com.tomato.running.domain.user.User;
+import com.tomato.running.domain.user.entity.User;
 import com.tomato.running.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
