@@ -69,7 +69,7 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.GET, "/meeting/{meeting_id}").authenticated()
                                 .requestMatchers(HttpMethod.PATCH, "/meeting/{meeting_id}").authenticated()
                                 .requestMatchers(HttpMethod.DELETE, "/meeting/{meeting_id}").authenticated()
-                                .requestMatchers(HttpMethod.GET, "/meeting/search/{title}").authenticated()
+                                .requestMatchers(HttpMethod.GET, "/meeting/search").authenticated()
 
 
                                 .anyRequest().authenticated()

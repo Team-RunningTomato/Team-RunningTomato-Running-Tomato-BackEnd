@@ -54,8 +54,8 @@ public class MeetingController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
-    @GetMapping("/search/{title}")
-    public ResponseEntity<List<GetMeetingResponseDto>> searchMeeting(@PathVariable String title) {
+    @GetMapping("/search")
+    public ResponseEntity<List<GetMeetingResponseDto>> searchMeeting(@RequestParam String title) {
         List<GetMeetingResponseDto> meetingList = getSearchMeetingService.searchMeeting(title);
         return ResponseEntity.ok(meetingList);
     }
