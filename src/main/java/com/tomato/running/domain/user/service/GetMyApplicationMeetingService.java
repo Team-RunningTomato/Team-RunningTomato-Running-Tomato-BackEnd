@@ -5,13 +5,13 @@ import com.tomato.running.domain.meeting.controller.data.res.GetMeetingResponseD
 import com.tomato.running.domain.meeting.repository.MeetingMemberRepository;
 import com.tomato.running.domain.user.User;
 import com.tomato.running.domain.user.util.UserUtil;
-import com.tomato.running.global.annotation.TransactionService;
+import com.tomato.running.global.annotation.ReadOnlyTransactionService;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@TransactionService
+@ReadOnlyTransactionService
 @RequiredArgsConstructor
 public class GetMyApplicationMeetingService {
 
