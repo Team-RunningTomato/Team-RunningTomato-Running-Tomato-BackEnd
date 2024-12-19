@@ -13,7 +13,8 @@ import java.util.stream.Collectors;
 @ReadOnlyTransactionService
 public class GetSearchMeetingService {
 
-private final MeetingRepository meetingRepository;
+    private final MeetingRepository meetingRepository;
+    
     public List<GetMeetingResponseDto> searchMeeting(String title) {
         List<Meeting> meetings = meetingRepository.findByTitleContaining(title);
 
