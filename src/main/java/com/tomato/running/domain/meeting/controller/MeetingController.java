@@ -24,6 +24,7 @@ public class MeetingController {
     private final GetMeetingInfoService getMeetingInfoService;
     private final UpdateMeetingService updateMeetingService;
     private final DeleteMeetingService deleteMeetingService;
+    private final GetSearchMeetingService getSearchMeetingService;
 
     @PostMapping
     public ResponseEntity<Void> creatMeeting(@RequestBody @Valid CreateMeetingRequestDto dto) {
@@ -52,4 +53,11 @@ public class MeetingController {
         deleteMeetingService.deleteMeeting(meetingId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<GetMeetingResponseDto>> searchMeeting(@RequestParam String title) {
+        List<GetMeetingResponseDto> meetingList = getSearchMeetingService.searchMeeting(title);
+        return ResponseEntity.ok(meetingList);
+    }
+
 }
