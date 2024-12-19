@@ -1,16 +1,14 @@
 package com.tomato.running.domain.meeting.service;
 
-import com.tomato.running.domain.meeting.Meeting;
+import com.tomato.running.domain.meeting.entity.Meeting;
 import com.tomato.running.domain.meeting.controller.data.req.CreateMeetingRequestDto;
 import com.tomato.running.domain.meeting.repository.MeetingRepository;
-import com.tomato.running.domain.run.EndLocation;
-import com.tomato.running.domain.run.StartLocation;
-import com.tomato.running.domain.user.User;
+import com.tomato.running.domain.run.entity.EndLocation;
+import com.tomato.running.domain.run.entity.StartLocation;
+import com.tomato.running.domain.user.entity.User;
 import com.tomato.running.domain.user.util.UserUtil;
 import com.tomato.running.global.annotation.TransactionService;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
 @TransactionService
 @RequiredArgsConstructor

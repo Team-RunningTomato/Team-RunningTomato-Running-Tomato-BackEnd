@@ -1,9 +1,7 @@
 package com.tomato.running.domain.user.service;
 
-import com.tomato.running.domain.running.RunningUser;
-import com.tomato.running.domain.running.exception.RunningUserNotFoundException;
 import com.tomato.running.domain.running.repository.RunningUserRepository;
-import com.tomato.running.domain.user.User;
+import com.tomato.running.domain.user.entity.User;
 import com.tomato.running.domain.user.controller.data.res.GetMyInformationResponseDto;
 import com.tomato.running.domain.user.util.UserUtil;
 import com.tomato.running.global.annotation.ReadOnlyTransactionService;

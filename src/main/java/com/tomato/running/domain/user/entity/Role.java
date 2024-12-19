@@ -1,4 +1,4 @@
-package com.tomato.running.domain.user;
+package com.tomato.running.domain.user.entity;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

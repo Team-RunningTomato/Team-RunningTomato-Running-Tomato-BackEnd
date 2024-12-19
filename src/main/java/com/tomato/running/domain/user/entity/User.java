@@ -1,6 +1,6 @@
-package com.tomato.running.domain.user;
+package com.tomato.running.domain.user.entity;
 
-import com.tomato.running.domain.running.RunningUser;
+import com.tomato.running.domain.running.entity.RunningUser;
 import com.tomato.running.domain.user.controller.data.req.UpdateWeightAndHeightRequestDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

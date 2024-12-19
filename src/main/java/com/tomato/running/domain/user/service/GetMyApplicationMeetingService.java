@@ -1,9 +1,9 @@
 package com.tomato.running.domain.user.service;
 
-import com.tomato.running.domain.meeting.Meeting;
+import com.tomato.running.domain.meeting.entity.Meeting;
 import com.tomato.running.domain.meeting.controller.data.res.GetMeetingResponseDto;
 import com.tomato.running.domain.meeting.repository.MeetingMemberRepository;
-import com.tomato.running.domain.user.User;
+import com.tomato.running.domain.user.entity.User;
 import com.tomato.running.domain.user.util.UserUtil;
 import com.tomato.running.global.annotation.ReadOnlyTransactionService;
 import lombok.RequiredArgsConstructor;

@@ -1,7 +1,7 @@
 package com.tomato.running.domain.auth.service;
 
 import com.tomato.running.domain.auth.repository.RefreshTokenRepository;
-import com.tomato.running.domain.user.User;
+import com.tomato.running.domain.user.entity.User;
 import com.tomato.running.domain.user.util.UserUtil;
 import com.tomato.running.global.annotation.ReadOnlyTransactionService;
 import lombok.RequiredArgsConstructor;

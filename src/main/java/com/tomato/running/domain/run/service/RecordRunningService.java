@@ -1,15 +1,15 @@
 package com.tomato.running.domain.run.service;
 
-import com.tomato.running.domain.run.EndLocation;
-import com.tomato.running.domain.run.Run;
-import com.tomato.running.domain.run.StartLocation;
+import com.tomato.running.domain.run.entity.EndLocation;
+import com.tomato.running.domain.run.entity.Run;
+import com.tomato.running.domain.run.entity.StartLocation;
 import com.tomato.running.domain.run.exception.InvalidRunDistanceException;
 import com.tomato.running.domain.run.presentation.data.req.RecordRunningRequestDto;
 import com.tomato.running.domain.run.repository.RunRepository;
 import com.tomato.running.domain.run.util.LevelUtil;
-import com.tomato.running.domain.running.RunningUser;
+import com.tomato.running.domain.running.entity.RunningUser;
 import com.tomato.running.domain.running.repository.RunningUserRepository;
-import com.tomato.running.domain.user.User;
+import com.tomato.running.domain.user.entity.User;
 import com.tomato.running.domain.user.util.UserUtil;
 import com.tomato.running.global.annotation.TransactionService;
 import lombok.RequiredArgsConstructor;

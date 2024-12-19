@@ -1,4 +1,4 @@
-package com.tomato.running.domain.run;
+package com.tomato.running.domain.run.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
