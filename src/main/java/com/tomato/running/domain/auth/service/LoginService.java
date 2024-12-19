@@ -72,7 +72,7 @@ public class LoginService {
         RunningUser runningUser = RunningUser.builder()
                 .totalDistance(0)
                 .bestDistance(0)
-                .worstDistance(0)
+                .worstDistance(null)
                 .levelPercentage(0)
                 .level(0)
                 .build();
