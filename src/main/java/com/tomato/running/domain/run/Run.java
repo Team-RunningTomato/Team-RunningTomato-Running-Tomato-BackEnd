@@ -7,6 +7,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.sql.Time;
 import java.util.UUID;
 
 @Getter
@@ -29,8 +30,8 @@ public class Run {
     @Embedded
     private EndLocation endLocation;
 
-    @Column(columnDefinition = "TEXT", nullable = false)
-    private String runningTime;
+    @Column(columnDefinition = "TIME", nullable = false)
+    private Time runningTime;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
