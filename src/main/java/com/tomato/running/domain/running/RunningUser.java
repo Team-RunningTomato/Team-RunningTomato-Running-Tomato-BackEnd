@@ -26,7 +26,7 @@ public class RunningUser {
     @Column(nullable = false, columnDefinition = "BIGINT(10)")
     private Integer bestDistance;
 
-    @Column(nullable = false, columnDefinition = "BIGINT(10)")
+    @Column(columnDefinition = "BIGINT(10)")
     private Integer worstDistance;
 
     @Column(nullable = false, columnDefinition = "TINYINT")
