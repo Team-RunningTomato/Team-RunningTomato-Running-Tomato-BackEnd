@@ -59,7 +59,9 @@ public class SecurityConfig {
                                 // user
                                 .requestMatchers(HttpMethod.PATCH, "/user").authenticated()
                                 .requestMatchers(HttpMethod.GET, "/user").authenticated()
-                                .requestMatchers(HttpMethod.GET, "/user/meetings").authenticated()
+                                .requestMatchers(HttpMethod.GET, "/user/meetings").authenticated()                                .requestMatchers(HttpMethod.GET, "/user/meetings").authenticated()
+                                .requestMatchers(HttpMethod.GET, "/user/meetings/application").authenticated()
+
 
                                 // run
                                 .requestMatchers(HttpMethod.POST, "/run").authenticated()
