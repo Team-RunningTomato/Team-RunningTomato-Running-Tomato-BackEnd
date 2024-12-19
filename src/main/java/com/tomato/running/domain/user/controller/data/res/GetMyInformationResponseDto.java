@@ -17,9 +17,9 @@ public class GetMyInformationResponseDto {
     @Builder
     @Getter
     public static class runningUserDto {
-        private Long totalDistance;
-        private Long bestDistance;
-        private Long worstDistance;
+        private Integer totalDistance;
+        private Integer bestDistance;
+        private Integer worstDistance;
         private Integer levelPercentage;
     }
 }
