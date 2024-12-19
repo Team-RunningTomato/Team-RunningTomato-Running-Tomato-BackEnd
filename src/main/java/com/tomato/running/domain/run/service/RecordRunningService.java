@@ -29,16 +29,17 @@ public class RecordRunningService {
         if (dto.getDistance() < 0)
             throw new InvalidRunDistanceException();
 
-        saveRun(dto);
+        saveRun(dto, user);
         saveRunningUser(user, dto);
     }
 
-    private void saveRun(RecordRunningRequestDto dto) {
+    private void saveRun(RecordRunningRequestDto dto, User user) {
         Run run = Run.builder()
                 .distance(dto.getDistance())
                 .startLocation(new StartLocation(dto.getStartLongitude(), dto.getStartLatitude()))
                 .endLocation(new EndLocation(dto.getEndLongitude(), dto.getEndLatitude()))
                 .runningTime(dto.getRunningTime())
+                .user(user)
                 .build();
 
         runRepository.save(run);
@@ -48,7 +49,14 @@ public class RecordRunningService {
         RunningUser runningUser = user.getRunningUser();
 
         Integer best = runningUser.getBestDistance() < dto.getDistance() ? dto.getDistance() : runningUser.getBestDistance();
-        Integer worst = runningUser.getWorstDistance() > dto.getDistance() ? dto.getDistance() : runningUser.getWorstDistance();
+
+        Integer worst;
+
+        if (runningUser.getWorstDistance() == null) {
+            worst = dto.getDistance();
+        } else {
+            worst = runningUser.getWorstDistance() > dto.getDistance() ? dto.getDistance() : runningUser.getWorstDistance();
+        }
 
         Integer newTotalDistance = runningUser.getTotalDistance() + dto.getDistance();
 
