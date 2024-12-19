@@ -29,6 +29,9 @@ public class RunningUser {
     @Column(nullable = false, columnDefinition = "BIGINT(10)")
     private Integer worstDistance;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TINYINT")
+    private Integer level;
+
+    @Column(nullable = false, columnDefinition = "TINYINT")
     private Integer levelPercentage;
 }
