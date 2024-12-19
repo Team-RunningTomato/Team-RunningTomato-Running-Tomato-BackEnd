@@ -21,14 +21,17 @@ public class RunningUser {
     private UUID id;
 
     @Column(nullable = false, columnDefinition = "BIGINT(10)")
-    private Long totalDistance;
+    private Integer totalDistance;
 
     @Column(nullable = false, columnDefinition = "BIGINT(10)")
-    private Long bestDistance;
+    private Integer bestDistance;
 
-    @Column(nullable = false, columnDefinition = "BIGINT(10)")
-    private Long worstDistance;
+    @Column(columnDefinition = "BIGINT(10)")
+    private Integer worstDistance;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "TINYINT")
+    private Integer level;
+
+    @Column(nullable = false, columnDefinition = "TINYINT")
     private Integer levelPercentage;
 }

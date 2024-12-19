@@ -54,7 +54,6 @@ public class LoginService {
                 .mobile(naverInfoResponse.getMobile())
                 .role(Role.ROLE_USER)
                 .runningUser(runningUser)
-                .level(0)
                 .build();
 
         return userRepository.save(user);
@@ -71,10 +70,11 @@ public class LoginService {
 
     private RunningUser saveRunningUser() {
         RunningUser runningUser = RunningUser.builder()
-                .totalDistance(0L)
-                .bestDistance(0L)
-                .worstDistance(0L)
+                .totalDistance(0)
+                .bestDistance(0)
+                .worstDistance(null)
                 .levelPercentage(0)
+                .level(0)
                 .build();
 
         runningUserRepository.save(runningUser);
