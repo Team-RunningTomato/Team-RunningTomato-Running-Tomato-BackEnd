@@ -25,6 +25,7 @@ public class MeetingController {
     private final UpdateMeetingService updateMeetingService;
     private final DeleteMeetingService deleteMeetingService;
     private final GetSearchMeetingService getSearchMeetingService;
+    private final ApplicationMeetingService applicationMeetingService;
 
     @PostMapping
     public ResponseEntity<Void> creatMeeting(@RequestBody @Valid CreateMeetingRequestDto dto) {
@@ -58,6 +59,12 @@ public class MeetingController {
     public ResponseEntity<List<GetMeetingResponseDto>> searchMeeting(@RequestParam String title) {
         List<GetMeetingResponseDto> meetingList = getSearchMeetingService.searchMeeting(title);
         return ResponseEntity.ok(meetingList);
+    }
+
+    @PostMapping("/member/{meeting_id}")
+    public ResponseEntity<Void> applicationMeeting(@PathVariable("meeting_id") UUID meetingId) {
+        applicationMeetingService.applicationMeeting(meetingId);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
 }
