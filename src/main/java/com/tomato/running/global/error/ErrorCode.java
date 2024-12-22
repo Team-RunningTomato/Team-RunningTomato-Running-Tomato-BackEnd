@@ -24,7 +24,10 @@ public enum ErrorCode {
 
     // meeting
     MEETING_NOT_FOUND(404, "MEETING_NOT_FOUND"),
-    AUTHOR_NOT_VALID(401, "AUTHOR_NOT_VALID"),;
+    AUTHOR_NOT_VALID(401, "AUTHOR_NOT_VALID"),
+
+    // meetingMember
+    ALREADY_EXIST_MEETING_MEMBER(409, "ALREADY_EXIST_MEETING_MEMBER"),;
     private final int status;
     private final String message;
 }
