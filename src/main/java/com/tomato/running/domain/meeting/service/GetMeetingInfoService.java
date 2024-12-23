@@ -26,6 +26,7 @@ public class GetMeetingInfoService {
                 .distance(meeting.getDistance())
                 .startAt(String.valueOf(meeting.getStartAt()))
                 .startLocation(meeting.getStartLocation())
+                .addressDetail(meeting.getAddressDetail())
                 .author(new GetMeetingInfoResponseDto.AuthorInformation(meeting.getUser().getName(), meeting.getUser().getRunningUser().getLevel()))
                 .memberNum(meetingMemberRepository.countAllByMeeting(meeting))
                 .build();

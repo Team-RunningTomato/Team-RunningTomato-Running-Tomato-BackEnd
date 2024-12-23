@@ -27,9 +27,5 @@ public class CreateMeetingRequestDto {
     private Float startLatitude;
 
     @NotNull
-    private Float endLongitude;
-
-    @NotNull
-    private Float endLatitude;
-
+    private String addressDetail;
 }
