@@ -7,7 +7,6 @@ import com.tomato.running.global.annotation.TransactionService;
 import com.tomato.running.global.security.jwt.TokenProvider;
 import com.tomato.running.global.security.util.count.RefreshToken;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.UUID;
 
