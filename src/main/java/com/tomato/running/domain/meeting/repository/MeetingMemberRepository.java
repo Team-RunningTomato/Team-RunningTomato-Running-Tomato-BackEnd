@@ -18,5 +18,7 @@ public interface MeetingMemberRepository extends JpaRepository<MeetingMember, UU
     List<Meeting> findMeetingsByUser(User user);
     Boolean existsByMeetingAndUser(Meeting meeting, User user);
     void deleteAllByMeeting(Meeting meeting);
+    void deleteByMeetingAndUser(Meeting meeting, User user);
+
 }
 

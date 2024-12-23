@@ -73,6 +73,8 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.DELETE, "/meeting/{meeting_id}").authenticated()
                                 .requestMatchers(HttpMethod.GET, "/meeting/search").authenticated()
                                 .requestMatchers(HttpMethod.POST, "/meeting/member/{meeting_id}").authenticated()
+                                .requestMatchers(HttpMethod.DELETE, "/meeting/member/{meeting_id}").authenticated()
+
 
 
                                 .anyRequest().authenticated()
