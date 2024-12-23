@@ -23,14 +23,16 @@ public class ReissueTokenService {
         RefreshToken findRefreshToken = refreshTokenRepository.findByToken(parseRefreshToken)
                 .orElseThrow(TokenNotFoundException::new);
 
+        refreshTokenRepository.deleteById(findRefreshToken.getUserId());
+
         TokenDto tokenDto = tokenProvider.generateTokenDto(findRefreshToken.getUserId());
 
-        saveFreshToken(tokenDto.getRefreshToken(), findRefreshToken.getUserId());
+        saveRefreshToken(tokenDto.getRefreshToken(), findRefreshToken.getUserId());
 
         return tokenDto;
     }
 
-    private void saveFreshToken(String token, UUID id) {
+    private void saveRefreshToken(String token, UUID id) {
         RefreshToken refreshToken = RefreshToken.builder()
                 .userId(id)
                 .token(token)
