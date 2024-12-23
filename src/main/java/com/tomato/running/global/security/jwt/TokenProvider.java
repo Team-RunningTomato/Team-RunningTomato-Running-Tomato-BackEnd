@@ -39,7 +39,7 @@ public class TokenProvider {
 
     public TokenDto generateTokenDto(UUID userid){
         return TokenDto.builder()
-                .grantType(BEARER_TYPE)
+                .grantType("Bearer")
                 .accessToken(generateAccessToken(userid))
                 .refreshToken(generateRefreshToken(userid))
                 .accessTokenExpiresIn(ACCESS_TOKEN_EXPIRE_TIME)
