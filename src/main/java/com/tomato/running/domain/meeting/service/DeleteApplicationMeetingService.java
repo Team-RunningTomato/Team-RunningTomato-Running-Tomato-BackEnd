@@ -31,7 +31,7 @@ public class DeleteApplicationMeetingService {
             throw new MemberNotValidException();
         }
 
-        meetingMemberRepository.deleteAllByMeeting(meeting);
+        meetingMemberRepository.deleteByMeetingAndUser(meeting, currentUser);
     }
 
 }
