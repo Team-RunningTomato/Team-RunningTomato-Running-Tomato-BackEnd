@@ -1,10 +1,10 @@
 package com.tomato.running.global.error;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 @Getter
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class CustomException extends RuntimeException{
-    ErrorCode errorCode;
+    private final ErrorCode errorCode;
 }
