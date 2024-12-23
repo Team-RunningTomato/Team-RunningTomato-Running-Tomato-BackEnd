@@ -14,6 +14,7 @@ public class GetMeetingInfoResponseDto {
     private StartLocation startLocation;
     private AuthorInformation author;
     private Integer memberNum;
+    private String addressDetail;
 
     @Getter
     @AllArgsConstructor

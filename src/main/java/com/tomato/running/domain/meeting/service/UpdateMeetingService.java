@@ -36,7 +36,7 @@ public class UpdateMeetingService {
                 dto.getDistance(),
                 dto.getStartAt(),
                 new StartLocation(dto.getStartLongitude(), dto.getStartLatitude()),
-                new EndLocation(dto.getEndLongitude(), dto.getEndLatitude())
+                dto.getAddressDetail()
         );
     }
 }

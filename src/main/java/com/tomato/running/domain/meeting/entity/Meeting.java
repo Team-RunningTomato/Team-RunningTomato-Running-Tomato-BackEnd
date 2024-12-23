@@ -36,20 +36,20 @@ public class Meeting {
     @Embedded
     private StartLocation startLocation;
 
-    @Embedded
-    private EndLocation endLocation;
+    @Column(nullable = false, columnDefinition = "VARCHAR(50)")
+    private String addressDetail;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     public void updateMeeting(String title, Integer distance, LocalDateTime startAt,
-                              StartLocation startLocation, EndLocation endLocation) {
+                              StartLocation startLocation, String addressDetail) {
         this.title = title;
         this.distance = distance;
         this.startAt = startAt;
         this.startLocation = startLocation;
-        this.endLocation = endLocation;
+        this.addressDetail = addressDetail;
     }
 
 }

@@ -28,7 +28,7 @@ public class CreateMeetingService {
                 .distance(dto.getDistance())
                 .startAt(dto.getStartAt())
                 .startLocation(new StartLocation(dto.getStartLongitude(), dto.getStartLatitude()))
-                .endLocation(new EndLocation(dto.getEndLongitude(), dto.getEndLatitude()))
+                .addressDetail(dto.getAddressDetail())
                 .user(user)
                 .build();
 
