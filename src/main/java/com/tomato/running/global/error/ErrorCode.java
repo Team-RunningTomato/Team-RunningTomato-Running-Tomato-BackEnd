@@ -28,7 +28,8 @@ public enum ErrorCode {
     MEMBER_NOT_VALID(401, "MEMBER_NOT_VALID"),
 
     // meetingMember
-    ALREADY_EXIST_MEETING_MEMBER(409, "ALREADY_EXIST_MEETING_MEMBER"),;
+    ALREADY_EXIST_MEETING_MEMBER(409, "ALREADY_EXIST_MEETING_MEMBER"),
+    MEETING_MEMBER_NOT_FOUND(404, "MEETING_MEMBER_NOT_FOUND"),;
     private final int status;
     private final String message;
 }
