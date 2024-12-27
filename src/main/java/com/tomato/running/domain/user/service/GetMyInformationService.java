@@ -33,6 +33,7 @@ public class GetMyInformationService {
                         .bestDistance(runningUser.getBestDistance())
                         .worstDistance(runningUser.getWorstDistance())
                         .levelPercentage(runningUser.getLevelPercentage())
+                        .level(runningUser.getLevel())
                         .build())
                 .build();
     }
