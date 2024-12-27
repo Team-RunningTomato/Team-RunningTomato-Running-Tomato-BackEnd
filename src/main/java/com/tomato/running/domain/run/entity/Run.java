@@ -1,5 +1,6 @@
 package com.tomato.running.domain.run.entity;
 
+import com.tomato.running.domain.meeting.entity.Meeting;
 import com.tomato.running.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -32,6 +33,10 @@ public class Run {
 
     @Column(columnDefinition = "TIME", nullable = false)
     private Time runningTime;
+
+    @ManyToOne
+    @JoinColumn(name = "meeting_id", nullable = false)
+    private Meeting meeting;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
