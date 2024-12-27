@@ -1,8 +1,8 @@
-package com.tomato.running.domain.user.controller;
+package com.tomato.running.domain.user.presentation;
 
 import com.tomato.running.domain.meeting.controller.data.res.GetMeetingResponseDto;
-import com.tomato.running.domain.user.controller.data.req.UpdateWeightAndHeightRequestDto;
-import com.tomato.running.domain.user.controller.data.res.GetMyInformationResponseDto;
+import com.tomato.running.domain.user.presentation.data.req.UpdateWeightAndHeightRequestDto;
+import com.tomato.running.domain.user.presentation.data.res.GetMyInformationResponseDto;
 import com.tomato.running.domain.user.service.GetMeetingsService;
 import com.tomato.running.domain.user.service.GetMyApplicationMeetingService;
 import com.tomato.running.domain.user.service.GetMyInformationService;

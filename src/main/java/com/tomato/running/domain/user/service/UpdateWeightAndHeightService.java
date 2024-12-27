@@ -1,7 +1,7 @@
 package com.tomato.running.domain.user.service;
 
 import com.tomato.running.domain.user.entity.User;
-import com.tomato.running.domain.user.controller.data.req.UpdateWeightAndHeightRequestDto;
+import com.tomato.running.domain.user.presentation.data.req.UpdateWeightAndHeightRequestDto;
 import com.tomato.running.domain.user.repository.UserRepository;
 import com.tomato.running.domain.user.util.UserUtil;
 import com.tomato.running.global.annotation.TransactionService;

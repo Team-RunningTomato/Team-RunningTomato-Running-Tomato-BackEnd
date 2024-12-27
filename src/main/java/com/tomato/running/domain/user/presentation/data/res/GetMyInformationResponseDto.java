@@ -1,4 +1,4 @@
-package com.tomato.running.domain.user.controller.data.res;
+package com.tomato.running.domain.user.presentation.data.res;
 
 import lombok.Builder;
 import lombok.Getter;
