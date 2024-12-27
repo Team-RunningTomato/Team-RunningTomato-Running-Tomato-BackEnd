@@ -63,7 +63,7 @@ public class SecurityConfig {
                                 .requestMatchers(HttpMethod.GET, "/user/meetings/application").authenticated()
 
                                 // run
-                                .requestMatchers(HttpMethod.POST, "/run").authenticated()
+                                .requestMatchers(HttpMethod.POST, "/run/{meeting_id}").authenticated()
 
                                 //meeting
                                 .requestMatchers(HttpMethod.POST, "/meeting").authenticated()

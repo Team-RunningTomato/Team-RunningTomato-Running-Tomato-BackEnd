@@ -17,7 +17,7 @@ public class RunController {
 
     private final RecordRunningService recordRunningService;
 
-    @PostMapping("{meeting_id}")
+    @PostMapping("/{meeting_id}")
     public ResponseEntity<Void> recordRunning(@PathVariable("meeting_id") UUID meetingId, @RequestBody @Valid RecordRunningRequestDto dto) {
         recordRunningService.recordRunning(meetingId ,dto);
         return ResponseEntity.status(HttpStatus.CREATED).build();
