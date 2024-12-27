@@ -14,6 +14,7 @@ import com.tomato.running.domain.run.presentation.data.req.RecordRunningRequestD
 import com.tomato.running.domain.run.repository.RunRepository;
 import com.tomato.running.domain.run.util.LevelUtil;
 import com.tomato.running.domain.running.entity.RunningUser;
+import com.tomato.running.domain.running.exception.RunningUserNotFoundException;
 import com.tomato.running.domain.running.repository.RunningUserRepository;
 import com.tomato.running.domain.user.entity.User;
 import com.tomato.running.domain.user.util.UserUtil;
@@ -61,7 +62,8 @@ public class RecordRunningService {
     }
 
     private void saveRunningUser(User user, Meeting meeting) {
-        RunningUser runningUser = user.getRunningUser();
+        RunningUser runningUser = runningUserRepository.findByUser(user)
+                .orElseThrow(RunningUserNotFoundException::new);
 
         Integer best = runningUser.getBestDistance() < meeting.getDistance() ? meeting.getDistance() : runningUser.getBestDistance();
 
@@ -82,6 +84,7 @@ public class RecordRunningService {
                 .totalDistance(newTotalDistance)
                 .levelPercentage(levelUtil.calculatePercentage(newTotalDistance))
                 .level(levelUtil.calculateLevel(newTotalDistance))
+                .user(user)
                 .build();
 
         runningUserRepository.save(newRunningUser);
