@@ -21,5 +21,6 @@ public class GetMyInformationResponseDto {
         private Integer bestDistance;
         private Integer worstDistance;
         private Integer levelPercentage;
+        private Integer level;
     }
 }
