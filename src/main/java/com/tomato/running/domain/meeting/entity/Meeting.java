@@ -38,6 +38,9 @@ public class Meeting {
     @Column(nullable = false, columnDefinition = "VARCHAR(50)")
     private String addressDetail;
 
+    @Column(nullable = false)
+    private Boolean status;
+
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;

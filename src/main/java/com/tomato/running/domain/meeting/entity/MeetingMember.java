@@ -20,6 +20,9 @@ public class MeetingMember {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
+    @Column(nullable = false)
+    private Boolean status;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "meeting_id", nullable = false)
     private Meeting meeting;
