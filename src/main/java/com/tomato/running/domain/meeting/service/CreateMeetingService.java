@@ -30,6 +30,7 @@ public class CreateMeetingService {
                 .startLocation(new StartLocation(dto.getStartLongitude(), dto.getStartLatitude()))
                 .addressDetail(dto.getAddressDetail())
                 .user(user)
+                .status(true)
                 .build();
 
         meetingRepository.save(meeting);
