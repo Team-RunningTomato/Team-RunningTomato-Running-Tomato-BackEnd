@@ -29,7 +29,6 @@ public class Meeting {
     @Column(nullable = false)
     private Integer distance;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "Asia/Seoul")
     @Column(nullable = false)
     private LocalDateTime startAt;
 
