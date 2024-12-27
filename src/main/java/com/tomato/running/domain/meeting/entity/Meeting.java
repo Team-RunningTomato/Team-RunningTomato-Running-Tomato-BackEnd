@@ -29,7 +29,6 @@ public class Meeting {
     @Column(nullable = false)
     private Integer distance;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm", timezone = "Asia/Seoul")
     @Column(nullable = false)
     private LocalDateTime startAt;
 
@@ -38,6 +37,9 @@ public class Meeting {
 
     @Column(nullable = false, columnDefinition = "VARCHAR(50)")
     private String addressDetail;
+
+    @Column(nullable = false)
+    private Boolean status;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -50,6 +52,10 @@ public class Meeting {
         this.startAt = startAt;
         this.startLocation = startLocation;
         this.addressDetail = addressDetail;
+    }
+
+    public void updateStatus() {
+        this.status = false;
     }
 
 }

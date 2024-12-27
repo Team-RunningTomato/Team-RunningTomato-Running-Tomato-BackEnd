@@ -9,10 +9,6 @@ import java.sql.Time;
 @Getter
 @NoArgsConstructor
 public class RecordRunningRequestDto {
-
-    @NotNull
-    private Integer distance;
-
     @NotNull
     private Float startLongitude;
 

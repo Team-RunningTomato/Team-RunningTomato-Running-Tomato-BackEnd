@@ -37,6 +37,7 @@ public class ApplicationMeetingService {
         MeetingMember meetingMember = MeetingMember.builder()
                 .meeting(meeting)
                 .user(user)
+                .status(false)
                 .build();
 
         meetingMemberRepository.save(meetingMember);

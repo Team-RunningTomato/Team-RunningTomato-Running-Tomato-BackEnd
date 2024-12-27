@@ -1,4 +1,4 @@
-package com.tomato.running.domain.user.controller.data.req;
+package com.tomato.running.domain.user.presentation.data.req;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;

@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface MeetingMemberRepository extends JpaRepository<MeetingMember, UUID> {
@@ -19,6 +20,7 @@ public interface MeetingMemberRepository extends JpaRepository<MeetingMember, UU
     Boolean existsByMeetingAndUser(Meeting meeting, User user);
     void deleteAllByMeeting(Meeting meeting);
     void deleteByMeetingAndUser(Meeting meeting, User user);
-
+    Optional<MeetingMember> findByMeetingAndUser(Meeting meeting, User user);
+    Boolean existsByMeetingAndStatus(Meeting meeting, Boolean status);
 }
 

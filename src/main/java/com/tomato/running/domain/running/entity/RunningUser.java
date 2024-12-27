@@ -1,5 +1,6 @@
 package com.tomato.running.domain.running.entity;
 
+import com.tomato.running.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -33,4 +34,8 @@ public class RunningUser {
 
     @Column(nullable = false, columnDefinition = "TINYINT")
     private Integer levelPercentage;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 }
