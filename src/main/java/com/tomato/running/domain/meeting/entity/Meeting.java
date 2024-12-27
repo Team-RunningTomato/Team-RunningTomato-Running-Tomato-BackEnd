@@ -54,4 +54,8 @@ public class Meeting {
         this.addressDetail = addressDetail;
     }
 
+    public void updateStatus() {
+        this.status = false;
+    }
+
 }
