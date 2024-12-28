@@ -18,8 +18,8 @@ public class GetMyInformationResponseDto {
     @Getter
     public static class runningUserDto {
         private Integer totalDistance;
-        private Integer bestDistance;
-        private Integer worstDistance;
+        private Integer longestDistance;
+        private Integer shortestDistance;
         private Integer levelPercentage;
         private Integer level;
     }
